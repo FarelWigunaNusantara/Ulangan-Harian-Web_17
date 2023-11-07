@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mengevaluasi nilai score</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+      }
+      h1 {
+        color: #333;
+      }
+      label {
+        display: block;
+        margin: 10px 0;
+      }
+      input {
+        padding: 5px;
+        margin: 5px 0;
+      }
+      button {
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      #hasil {
+        /* "hasil" */
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Evaluasi Nilai Score</h1>
+
+    <label for="inputNilai">Masukkan nilai:</label>
+    <input type="number" id="inputNilai" />
+    <button onclick="evaluateGrade()">Cek</button>
+
+    <p id="hasil"></p>
+
+    <script>
+      function evaluateGrade() {
+        // Mendapatkan nilai input
+        var nilai = document.getElementById("inputNilai").value;
+
+        // Memeriksa rentang nilai
+        if (nilai >= 90) {
+          document.getElementById("hasil").innerHTML = "Selamat! Anda mendapat nilai A.";
+        } else if (nilai >= 80 && nilai <= 89) {
+          document.getElementById("hasil").innerHTML = "Anda mendapat nilai B.";
+        } else if (nilai >= 70 && nilai <= 79) {
+          document.getElementById("hasil").innerHTML = "Anda mendapat nilai C.";
+        } else if (nilai >= 60 && nilai <= 69) {
+          document.getElementById("hasil").innerHTML = "Anda mendapat nilai D.";
+        } else if (nilai < 60) {
+          document.getElementById("hasil").innerHTML = "Anda mendapat nilai E.";
+        }
+      }
+    </script>
+  </body>
+</html>

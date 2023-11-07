@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Positif atau Negatif?</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      label {
+        display: block;
+        margin: 10px 0;
+      }
+      input {
+        padding: 5px;
+        margin: 5px 0;
+      }
+      button {
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      #hasil {
+        /* Update the ID to "hasil" */
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Positif atau Negatif?</h1>
+
+    <label for="inputAngka">Masukkan angka:</label>
+    <input type="angka" id="inputAngka" />
+    <button onclick="checkPositiveNegative()">Cek</button>
+
+    <p id="hasil"></p>
+
+    <script>
+      function checkPositiveNegative() {
+        // Mendapatkan nilai input
+        var number = document.getElementById("inputAngka").value;
+
+        // Memeriksa apakah angka positif, negatif, atau nol
+        if (number > 0) {
+          document.getElementById("hasil").innerHTML = "Angka " + number + " adalah positif.";
+        } else if (number < 0) {
+          document.getElementById("hasil").innerHTML = "Angka " + number + " adalah negatif.";
+        } else {
+          document.getElementById("hasil").innerHTML = "Angka " + number + " adalah nol.";
+        }
+      }
+    </script>
+  </body>
+</html>
